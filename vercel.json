@@ -1,9 +1,0 @@
-{
-    "version": 2,
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/qr", "dest": "index.js" },
-      { "src": "/(.*)", "dest": "index.js" }
-    ]
-}
-  
