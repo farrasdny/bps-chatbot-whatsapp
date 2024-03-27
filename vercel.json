@@ -6,7 +6,7 @@
       { "src": "/api/incoming", "dest": "/index.js" }
     ],
     "env": {
-      "PORT": 3000
+      "PORT": "3000"
     }
   }
   
