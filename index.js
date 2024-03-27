@@ -1,5 +1,4 @@
 // ============================  DECLARATION & CLIENT ============================
-
 const express = require('express');
 const { Client, NoAuth, LocalAuth, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
@@ -9,10 +8,6 @@ const app = express();
 const client = new Client({
     authStrategy: new NoAuth()
 });
-
-// const client = new Client({
-//     authStrategy: new LocalAuth()
-// });
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
@@ -38,14 +33,14 @@ client.on('message', async (message) => {
 });
 
 // Route for generating QR code
-app.get('/qr', (req, res) => {
+app.get('/api/qr', (req, res) => {
     // Generate and return QR code image
     const qrCode = generateQRCode(); // Function to generate QR code image
     res.send(qrCode);
 });
 
 // Route for handling incoming messages
-app.post('/incoming', async (req, res) => {
+app.post('/api/incoming', async (req, res) => {
     const content = req.body.content;
     const sender = req.body.sender;
     const replyMessage = await handleIncomingMessage(content, sender);
@@ -64,11 +59,8 @@ function generateQRCode() {
     // Your logic to generate QR code image
 }
 
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+module.exports = app;
+
 
 // ==============================  FUNCTION  ==============================
 
