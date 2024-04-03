@@ -1,6 +1,7 @@
 {
   "name": "whatsapp-web-js-2",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "dependencies": {
     "abbrev": "^1.1.1",
@@ -196,8 +197,8 @@
     "socket.io-parser": "^4.2.4",
     "sparse-bitfield": "^3.0.3",
     "statuses": "^2.0.1",
-    "string_decoder": "^1.3.0",
     "string-width": "^4.2.3",
+    "string_decoder": "^1.3.0",
     "strip-ansi": "^6.0.1",
     "supports-color": "^5.5.0",
     "tar-fs": "^2.1.1",
@@ -235,11 +236,20 @@
     "yauzl": "^2.10.0",
     "zip-stream": "^4.1.1"
   },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farrasdny/bps-chatbot-whatsapp.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "keywords": [],
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/farrasdny/bps-chatbot-whatsapp/issues"
+  },
+  "homepage": "https://github.com/farrasdny/bps-chatbot-whatsapp#readme"
 }
