@@ -1,5 +1,5 @@
 const express = require('express');
-const { Client, NoAuth, MessageMedia } = require('whatsapp-web.js');
+const { Client, MessageMedia } = require('whatsapp-web.js');
 const qrcode = require('qrcode'); // Tambahkan impor modul qrcode
 const fs = require('fs');
 
@@ -12,9 +12,7 @@ const app = express();
 
 // Fungsi untuk menginisialisasi klien WhatsApp
 function initializeWhatsAppClient() {
-    const client = new Client({
-        authStrategy: new NoAuth()
-    });
+    const client = new Client();
 
     client.on('qr', async (qr) => {
         // Generate QR code as image
@@ -45,7 +43,7 @@ function initializeWhatsAppClient() {
     const ext = {
         // =========================  NUMBER OPTION  =========================
         greeting() {
-            const greetingMessage = "*Selamat Datang😊* \n*Chatbot BPS Kabupaten Malang* \n-------------------------------------------------------\nPilih Layanan Informasi : \n1. Pusat Statistik Terpadu (PST) Online \n2. Panduan Konsultasi Statistik \n3. Informasi Data Statistik \n4. Pojok Statistik";
+            const greetingMessage = "*Selamat Datang😊* \n*Chatbot BPS Kabupaten Malang* \n-------------------------------------------------------\nPilih Layanan Informasi : \n1. Pusat Statistik Terpadu (PST) Online \n2. Panduan Konsultasi Statistik \n3. Informasi Data Statistik \n4. Pojok Statistik \n5. Saran dan Pengaduan";
             const image = 'image/logo-or-header/bps-logo.jpg'; // Change 'path/to/your/image.jpg' to the actual path of your image
             return { image, caption: greetingMessage };
         },
